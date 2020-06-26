@@ -1,0 +1,83 @@
+1: LOGIN admin password
+Login successful
+
+2: CREATE ROLE ROLEPATIENT
+Role created successfully
+
+3: CREATE ROLE ROLEEMPLOYEE
+Role created successfully
+
+4: CREATE ROLE ROLEDOCTOR
+Role created successfully
+
+5: CREATE USER USER1 PASSWORD1
+User created successfully
+
+6: CREATE USER USER2 PASSWORD2
+User created successfully
+
+7: ASSIGN ROLE USER1 ROLEPATIENT
+Role assigned successfully
+
+8: ASSIGN ROLE USER2 ROLEDOCTOR
+Role assigned successfully
+
+9: ASSIGN ROLE USER2 ROLEEMPLOYEE
+Role assigned successfully
+
+10: GRANT PRIVILEGE INSERT TO ROLEDOCTOR ON Doctors
+Privilege granted successfully
+
+11: GRANT PRIVILEGE INSERT TO ROLEPATIENT ON Patients
+Privilege granted successfully
+
+12: GRANT PRIVILEGE SELECT TO ROLEEMPLOYEE ON Doctors
+Privilege granted successfully
+
+13: GRANT PRIVILEGE SELECT TO ROLEEMPLOYEE ON Pharmacists
+Privilege granted successfully
+
+14: LOGIN USER1 PASSWORD1
+Login successful
+
+15: INSERT INTO Doctors VALUES ('1', 'firstname 1', 'lastname 1', 'address 1') GET ROLEDOCTOR
+Privilege with name 'INSERT' was not found.
+16: INSERT INTO Doctors VALUES ('2', 'firstname 2', 'lastname 2', 'address 2') GET ROLEEMPLOYEE
+Privilege with name 'INSERT' was not found.
+17: INSERT INTO Patients VALUES ('1', 'firstname 1', 'lastname 1', 'address 1') GET ROLEPATIENT
+Privilege with name 'INSERT' was not found.
+18: INSERT INTO Pharmacists VALUES ('1', 'firstname 1', 'lastname 1', 'address 1') GET ROLEEMPLOYEE
+Privilege with name 'INSERT' was not found.
+19: SELECT * FROM Doctors
+Privilege with name 'INSERT' was not found.
+
+20: SELECT * FROM Patients
+Privilege with name 'INSERT' was not found.
+
+21: SELECT * FROM Pharmacists
+Privilege with name 'INSERT' was not found.
+
+22: LOGIN USER2 PASSWORD2
+Login successful
+
+23: SELECT * FROM Doctors
+Privilege with name 'INSERT' was not found.
+
+24: SELECT * FROM Patients
+Privilege with name 'INSERT' was not found.
+
+25: SELECT * FROM Pharmacists
+Privilege with name 'INSERT' was not found.
+
+26: INSERT INTO Patients VALUES ('2', 'firstname 2', 'lastname 2', 'address 2') GET ROLEPATIENT
+Privilege with name 'INSERT' was not found.
+27: LOGIN admin password
+Login successful
+
+28: REVOKE PRIVILEGE SELECT TO ROLEEMPLOYEE ON Doctors
+Privilege revoked successfully
+
+29: SELECT * FROM Doctors
+Privilege with name 'INSERT' was not found.
+
+30: EXIT
